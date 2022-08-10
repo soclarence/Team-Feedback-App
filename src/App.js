@@ -1,9 +1,10 @@
 import './App.css';
+import EnterFeedBack from './Components/Pages/EnterFeedback';
 
 function App() {
   return (
-    <div className="App">
-      Hi
+    <div>
+      <EnterFeedBack />
     </div>
   );
 }
