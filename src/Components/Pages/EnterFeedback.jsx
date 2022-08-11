@@ -13,7 +13,7 @@ function enterFeedBack(){
                 </div>
                 
                 <div className="w-96 pb-5">
-                    <p className="text-[15px]">How has your experience been working at PLEASE company?</p>
+                    <p className="text-[15px]">How has your experience been working at PLEASE company?*</p>
                 </div>
 
                 <div className="flex flex-row space-x-3">

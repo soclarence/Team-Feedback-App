@@ -1,10 +1,11 @@
 import profilePhoto from "../../img/profilePhoto.png"
 import DeleteButton from "../Buttons/DeleteButton";
+import EditButton from "../Buttons/EditButton";
 
 
 function employeeFeedback() {
     return(
-        <div className="w-96 flex items-start space-x-2">
+        <div className="w-96 flex items-start space-x-1 pb-8">
             <div className="flex items-end">
                 <img className="w-[40px] h-[40px]" src={profilePhoto} alt="memoji" />
 
@@ -21,9 +22,9 @@ function employeeFeedback() {
                 </div>
 
             </div>
-            <div className="grid">
+            <div className="grid space-y-1">
+                <EditButton />
                 <DeleteButton />
-                <div>e</div>
             </div>
         </div>
     )
