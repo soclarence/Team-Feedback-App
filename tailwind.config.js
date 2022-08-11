@@ -15,7 +15,8 @@ module.exports = {
         'brightBlue': '#E7E8FF',
         'mainOrange': '#F49D68',
         'mainBlue': '#767DE8',
-        'mainBlack': '#1E1E1E'
+        'mainBlack': '#1E1E1E',
+        'brightGreen' : '#EEFFFB'
       }
     },
   },
