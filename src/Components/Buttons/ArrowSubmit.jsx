@@ -1,4 +1,4 @@
-import Arrow from "../../img/arrowSubmit.svg"
+import Arrow from "../Atoms/Img/arrowSubmit.svg"
 
 function arrowSubmit() {
     return(

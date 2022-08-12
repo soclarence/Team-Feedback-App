@@ -1,4 +1,4 @@
-import profilePhoto from "../../img/profilePhoto.png"
+import profilePhoto from "../Atoms/Img/profilePhoto.png";
 import DeleteButton from "../Buttons/DeleteButton";
 import EditButton from "../Buttons/EditButton";
 

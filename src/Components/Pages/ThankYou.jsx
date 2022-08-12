@@ -1,4 +1,4 @@
-import Confetti from "../../img/confetti.png"
+import Confetti from "../Atoms/Img/confetti.png"
 import MainButton from "../Buttons/MainButton";
 
 function thankYou() {

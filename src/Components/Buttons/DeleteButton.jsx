@@ -1,4 +1,4 @@
-import Delete from "../../img/delete.svg"
+import Delete from "../Atoms/Img/delete.svg"
 
 function deleteButton() {
     return(

@@ -1,4 +1,4 @@
-import Edit from "../../img/edit.svg"
+import Edit from "../Atoms/Img/edit.svg"
 
 function editButton() {
     return(
