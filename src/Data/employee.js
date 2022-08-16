@@ -1,7 +1,7 @@
-import Barn from "./Components/Atoms/Img/TeamPhoto04.png"
-import Rob from "./Components/Atoms/Img/TeamPhoto03.png"
-import Ross from "./Components/Atoms/Img/TeamPhoto02.png"
-import Reg from "./Components/Atoms/Img/TeamPhoto01.png"
+import Barn from "../Components/Atoms/Img/TeamPhoto04.png"
+import Rob from "../Components/Atoms/Img/TeamPhoto03.png"
+import Ross from "../Components/Atoms/Img/TeamPhoto02.png"
+import Reg from "../Components/Atoms/Img/TeamPhoto01.png"
 
 const employee = [
     {

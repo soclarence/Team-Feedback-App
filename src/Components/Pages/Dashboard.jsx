@@ -1,9 +1,11 @@
 import Header from "../Atoms/Header";
 import EmployeeList from "../Employee/EmployeeList";
 import AverageCount from "../Atoms/AverageCount";
-import FeedbackPost from "../Employee/FeedbackPost";
+// import FeedbackPost from "../Employee/FeedbackPost";
 import DashHeader from "../Atoms/DashHeader";
 import Question from "../Atoms/Question";
+// import EmployeeFeedback from "../Employee/EmployeeFeedback";
+import FeedbackList from "../Employee/FeedbackList";
 
 function dashboard() {
     return(
@@ -23,11 +25,7 @@ function dashboard() {
             <div className="flex md:flex-wrap lg:flex-nowrap 2sm:flex-wrap flex-row pt-16 space-x-4">
                 <div className="basis-1/2">
                     <DashHeader header="Team Feedback"/>
-                    <div className="">
-                        <FeedbackPost />
-                        <FeedbackPost />
-                        <FeedbackPost />
-                    </div>
+                    <FeedbackList />
                 </div>
 
                 <div className="basis-1/2  2sm:pb-11">

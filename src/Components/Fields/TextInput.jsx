@@ -1,6 +1,6 @@
 import ArrowSubmit from "../Buttons/ArrowSubmit"
 
-function textInput() {
+function TextInput(props) {
     return (
         <div className="border-mainBlack border rounded-xl  px-1 py-1 w-96">
             <div>
@@ -9,12 +9,15 @@ function textInput() {
 
             <div className="flex w-auto">
                 {/* <input className="w-96 text-[13px]" type="text" maxLength={55} /> */}
-                <textarea style={{resize: "none", outline: "none"}} className="w-96 bg-none pt-2 px-2" name="" id="" cols="30" rows="2" maxLength={55}></textarea>
-                <ArrowSubmit />
+                <textarea style={{resize: "none", outline: "none"}} className="w-96 bg-none pt-2 px-2" name="reply" id="" cols="30" rows="2" maxLength={55}
+                onChange={props.changeValue}
+                value={props.formValue}
+                ></textarea>
+                <ArrowSubmit submit={props.send} />
             </div>
-            <p className="text-[10px] text-gray-600 font-bold  pl-2">55</p>
+            <p className="text-[10px] text-gray-600 font-bold  pl-2">{props.wordCount}</p>
         </div>
     )
 }
 
-export default textInput;
+export default TextInput;

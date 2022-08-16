@@ -1,5 +1,5 @@
 import EmployeeCard from "../Atoms/EmployeeCard";
-import employee from "../../employee";
+import employee from "../../Data/employee";
 
 function createEmployee(employee) {
     return <EmployeeCard
@@ -10,7 +10,7 @@ function createEmployee(employee) {
             />
 }
 
-function employeeList() {
+function EmployeeList() {
     return(
         <div className="flex flex-row sm:justify-items-center space-x-2 sm:space-x-2 sm:px-1 overflow-hidden ">
             {employee.map(createEmployee)}
@@ -18,4 +18,4 @@ function employeeList() {
     )
 }
 
-export default employeeList;
+export default EmployeeList;
