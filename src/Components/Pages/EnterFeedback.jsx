@@ -3,8 +3,14 @@ import TextInput from "../Fields/TextInput"
 import MainButton from "../Buttons/MainButton"
 import RadioInput from "../Fields/RadioInput"
 import EmployeeFeedback from "../Employee/EmployeeFeedback"
+
+// user images
+import Barn from "../Atoms/Img/TeamPhoto04.png"
+import Rob from "../Atoms/Img/TeamPhoto03.png"
 import Ross from "../Atoms/Img/TeamPhoto02.png"
-import { useState } from "react"
+import Reg from "../Atoms/Img/TeamPhoto01.png"
+
+import { useState, useEffect } from "react"
 
 function EnterFeedBack(){
     const [inputValue, setInputValue] = useState({
@@ -19,12 +25,27 @@ function EnterFeedBack(){
 
     const [inputNum, setInputNum] = useState(55)
 
+    const [randomUser, setRandomUser] = useState([{img: "",
+        name: ""}
+        ])
+
+    const [buttonControl, setButtonControl] = useState(false)
+
+    const userData = [{img: Ross,
+        name: "Ross Geller"},
+        {img: Rob,
+        name: "Robin Sherby"},
+        {img: Barn,
+        name: "Barney Stindon"},
+        {img: Reg,
+        name: "Regina Filange"}]
+
     
     function handleChange(e){
         const {name, value} = e.target;
 
         // word count function
-        setInputNum(inputValue.reply.length - 55)
+        setInputNum(55 - inputValue.reply.length)
 
         setInputValue(prevValue => {
             return{
@@ -32,10 +53,36 @@ function EnterFeedBack(){
                 [name]: value
             }
         })
+
     }
 
+    // radio/button disabled status function (effect)
+    useEffect(() => {
+        setButtonControl(() => {
+            if(inputValue.rate < "1" || inputValue.reply.length < 10) {
+                return true
+            }else{
+                return false
+            }
+        })
+    }, [inputValue])
+
+
+    // Random user function
+    function randomImage(){
+        const randomUserData = Math.floor(Math.random() * userData.length);
+        setRandomUser(() => {
+            return{
+                img: userData[randomUserData].img,
+                name: userData[randomUserData].name
+            }
+        })
+
+    }
+    
+
     // feedback reply
-    function sendUserReply(e) {
+    function sendUserReply() {
         setUserReply(() => {
             return {
                 rate: inputValue.rate,
@@ -43,17 +90,21 @@ function EnterFeedBack(){
             }
         });
 
+        setButtonControl(true);
+
         setInputNum(55);
 
         setFeedDisplay({display: ""});
+        
         
         setInputValue({
             rate: "",
             reply:""});
 
         // prevent page refresh
-        e.preventDefault();
+        // e.preventDefault();
     }
+
 
     // delete feedback
     function deleteReply(){
@@ -62,24 +113,31 @@ function EnterFeedBack(){
             reply: ""
         })
 
+        setButtonControl(true);
         setFeedDisplay({display: "none"});
+        setInputNum(55 - inputValue.reply.length)
     }
+
 
     // edit feedback
     function editReply(){
         setInputValue({
             rate: userReply.rate,
-            reply: " " + userReply.reply
+            reply: userReply.reply + " "
         })
+
+        setInputNum(55 - userReply.reply.length)
+
+        
     }
 
     return(
-        <div className="w-full flex justify-center items-center h-screen">
+        <div onLoad={randomImage} className="w-full flex justify-center items-center h-screen">
             <div className="w-96 flex-col space-y-5">
                 <div>
                     <EmployeeFeedback
-                        photo= {Ross}
-                        name= "Ross Geller"
+                        photo= {randomUser.img}
+                        name= {randomUser.name}
                         rate={userReply.rate}
                         reply={userReply.reply}
                         click={deleteReply}
@@ -135,7 +193,8 @@ function EnterFeedBack(){
                     formValue={inputValue.reply}
                     changeValue={handleChange}
                     send={sendUserReply}
-                    wordCount={inputNum} />
+                    wordCount={inputNum}
+                    status={buttonControl} />
 
                 <div>
                     <MainButton />

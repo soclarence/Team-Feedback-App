@@ -13,7 +13,9 @@ function TextInput(props) {
                 onChange={props.changeValue}
                 value={props.formValue}
                 ></textarea>
-                <ArrowSubmit submit={props.send} />
+                <ArrowSubmit 
+                disabled={props.status}
+                submit={props.send} />
             </div>
             <p className="text-[10px] text-gray-600 font-bold  pl-2">{props.wordCount}</p>
         </div>
