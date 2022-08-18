@@ -125,7 +125,7 @@ function EnterFeedBack({handleAdd}){
 
         const newFeedback = {
             img: randomUser.img,
-            rate: userReply.rate,
+            rate: parseInt(userReply.rate),
             name: randomUser.name,
             reply: userReply.reply
             

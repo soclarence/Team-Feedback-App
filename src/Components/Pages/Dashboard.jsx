@@ -20,7 +20,7 @@ function Dashboard({feedback}) {
                 </div>
                 <div className="lg:mr-0 md:pl-11  basis-1/4 sm:mt-[-50px]">
                     <DashHeader header="Average Rating"/>
-                    <AverageCount />
+                    <AverageCount feedback ={feedback}/>
                 </div>
             </div>
 
