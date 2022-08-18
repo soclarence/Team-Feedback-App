@@ -1,21 +1,16 @@
 import EmployeeFeedback from "./EmployeeFeedback";
-import FeedbackData from "../../Data/FeedbakcData";
 
-function createFeedback(FeedbackData) {
+function createFeedback(item) {
     return <EmployeeFeedback
-                key={FeedbackData.id}
-                photo={FeedbackData.img}
-                name={FeedbackData.name}
-                rate={FeedbackData.rate}
-                reply={FeedbackData.reply}
-                display={{display: "none"}}
+                key={item.id}
+                item={item}
                 />
 }
 
-function FeedbackList() {
+function FeedbackList({feedback}) {
     return (
         <div>
-            {FeedbackData.map(createFeedback)}
+            {feedback.map(createFeedback)}
         </div>
     )
 }

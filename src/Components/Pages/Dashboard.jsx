@@ -7,7 +7,9 @@ import Question from "../Atoms/Question";
 // import EmployeeFeedback from "../Employee/EmployeeFeedback";
 import FeedbackList from "../Employee/FeedbackList";
 
-function dashboard() {
+function Dashboard({feedback}) {
+
+
     return(
         <div className="container px-11 lg:px-11 xl:px-11 md:px-0 sm:px-4 overflow-hidden mx-auto justify-center flex-col">
             <Header />
@@ -25,7 +27,7 @@ function dashboard() {
             <div className="flex md:flex-wrap lg:flex-nowrap 2sm:flex-wrap flex-row pt-16 space-x-4">
                 <div className="basis-1/2">
                     <DashHeader header="Team Feedback"/>
-                    <FeedbackList />
+                    <FeedbackList feedback={feedback} />
                 </div>
 
                 <div className="basis-1/2  2sm:pb-11">
@@ -42,4 +44,4 @@ function dashboard() {
     )
 }
 
-export default dashboard;
+export default Dashboard;

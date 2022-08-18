@@ -1,0 +1,25 @@
+{
+  "feedback": [
+    {
+      "id": 1,
+      "img": "/static/media/TeamPhoto02.9788fe521e834dd88271.png",
+      "rate": 5,
+      "name": "Ross Geller",
+      "reply": "I really love working here! I hope I get a raise tho"
+    },
+    {
+      "id": 2,
+      "img": "/static/media/TeamPhoto04.5ad1c45f27405c4260d6.png",
+      "rate": 2,
+      "name": "Barney Stindon",
+      "reply": "My team and I found the new product difficult to use"
+    },
+    {
+      "img": "/static/media/TeamPhoto01.548cc4091caf3326cfd5.png",
+      "rate": "5",
+      "name": "Regina Filange",
+      "reply": "My experience working so far has been great",
+      "id": 3
+    }
+  ]
+}

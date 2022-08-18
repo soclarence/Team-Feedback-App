@@ -1,5 +1,6 @@
 import Confetti from "../Atoms/Img/confetti.png"
 import MainButton from "../Buttons/MainButton";
+import { Link } from "react-router-dom";
 
 function thankYou() {
     return(
@@ -16,7 +17,9 @@ function thankYou() {
                 </div>
 
                 <div className="pt-10 mt-10">
-                    <MainButton />
+                    <Link to="/dashboard">
+                        <MainButton />
+                    </Link>
                 </div>
             </div>
         </div>
