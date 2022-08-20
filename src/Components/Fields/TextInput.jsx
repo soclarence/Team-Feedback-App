@@ -2,7 +2,7 @@ import ArrowSubmit from "../Buttons/ArrowSubmit"
 
 function TextInput(props) {
     return (
-        <div className="border-mainBlack border rounded-xl  px-1 py-1 w-96">
+        <div className="border-mainBlack border rounded-xl  px-1 py-1 w-96 sm:w-80">
             <div>
                 <p className="text-[10px] text-gray-600 pl-2 pt-1">Write a review*</p>
             </div>

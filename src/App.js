@@ -4,7 +4,7 @@ import EnterFeedBack from './Components/Pages/EnterFeedback';
 import ThankYou from './Components/Pages/ThankYou';
 import Dashboard from './Components/Pages/Dashboard';
 import { useEffect, useState } from "react";
-// import FeedbackData from "./Data/FeedbakcData";
+import Home from './Components/Pages/Home';
 
 function App() {
   const [feedback, setFeedback] = useState([])
@@ -37,6 +37,7 @@ function App() {
   return (
     <div>
       <Routes>
+      <Route path="/" element={<Home />} />
         <Route path="get-started" element={<EnterFeedBack handleAdd={addFeedback} />} />
         <Route path="thank-you" element={<ThankYou />} />
         <Route path="dashboard" element={<Dashboard feedback={feedback} />} />

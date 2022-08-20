@@ -5,7 +5,7 @@ import RadioInput from "../Fields/RadioInput"
 import FeedBackPreview from "../Employee/FeedBackPreview"
 import userData from "../../Data/UserData"
 import { useNavigate } from "react-router-dom";
-
+import {motion} from 'framer-motion'
 import { useState, useEffect } from "react"
 
 function EnterFeedBack({handleAdd}){
@@ -137,8 +137,13 @@ function EnterFeedBack({handleAdd}){
     }
 
     return(
-        <div onLoad={randomImage} className="w-full flex justify-center items-center h-screen">
-            <form onSubmit={handleSubmit} className="w-96 flex-col space-y-5">
+        <motion.div
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                transition={{ duration: 0.5 }}
+            >
+        <div onLoad={randomImage} className="w-full flex justify-center items-center h-screen ">
+            <form onSubmit={handleSubmit} className="w-96 flex flex-col space-y-5 justify-center items-center content-center">
                 <div>
                     <FeedBackPreview
                         img= {randomUser.img}
@@ -152,7 +157,7 @@ function EnterFeedBack({handleAdd}){
                 </div>
                 
                 <div className="w-96 pb-5">
-                    <p className="text-[15px]">How has your experience been working at PLEASE company?*</p>
+                    <p className="text-[15px] sm:px-10 sm:text-center">How has your experience been working at PLEASE company?*</p>
                 </div>
 
                 <div className="flex flex-row space-x-3">
@@ -210,6 +215,7 @@ function EnterFeedBack({handleAdd}){
                 </div>
             </form>
         </div>
+        </motion.div>
     )
 }
 
