@@ -1,0 +1,68 @@
+.bar{
+    width: 25px;
+    height:2px;
+    background-color: black;
+    transition: all 0.7s cubic-bezier(0.87, -0.12, 0, 0.99);
+}
+
+.bar-2{
+    width: 15px;
+    height:2px;
+    background-color: black;
+    transition: all 0.7s cubic-bezier(0.87, -0.12, 0, 0.99);
+}
+
+.bar.Open{
+    transform: rotate(45deg);
+    transform-origin: 20%;
+    border-radius: 10px;
+}
+
+.bar-2.Open{
+    width: 25px;
+    transform: rotate(-45deg);
+    transform-origin: 25%;
+    border-radius: 10px;
+}
+
+.popup{
+    opacity: 0%;
+    top: -800px;
+    transition: all 0.5s ease-out;
+}
+
+.popup.Pop{
+    opacity: 100%;
+    top: 0px;
+    transition: all 0.2s ease-in-out;
+}
+
+.popup.Pop2{
+    opacity: 100%;
+    top: 0px;
+    transition: all 0.4s ease-in-out;
+}
+
+.menu{
+    transition: all 0s ease-in-out;
+}
+
+.text{
+    display: block;
+    opacity: 100%;
+    transition: all 0.4s ease-in;
+}
+
+.btn.text{
+    top: 18rem;
+    opacity: 100%;
+    transition: all 1s ease-in;
+    
+}
+
+.btn{
+    top: 17.6rem;
+    left: 6.5rem;
+    
+}
+

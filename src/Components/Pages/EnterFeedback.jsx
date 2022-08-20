@@ -2,43 +2,23 @@
 import TextInput from "../Fields/TextInput"
 import MainButton from "../Buttons/MainButton"
 import RadioInput from "../Fields/RadioInput"
-import EmployeeFeedback from "../Employee/EmployeeFeedback"
-
-// user images
-import Barn from "../Atoms/Img/TeamPhoto04.png"
-import Rob from "../Atoms/Img/TeamPhoto03.png"
-import Ross from "../Atoms/Img/TeamPhoto02.png"
-import Reg from "../Atoms/Img/TeamPhoto01.png"
-
+import FeedBackPreview from "../Employee/FeedBackPreview"
+import userData from "../../Data/UserData"
+import { useNavigate } from "react-router-dom";
+import {motion} from 'framer-motion'
 import { useState, useEffect } from "react"
 
-function EnterFeedBack(){
-    const [inputValue, setInputValue] = useState({
-        rate: "",
-        reply:""});
-
-    const [userReply, setUserReply] = useState({
-        rate: "",
-        reply:""});
+function EnterFeedBack({handleAdd}){
+    const [inputValue, setInputValue] = useState({rate: "",reply:""});
+    const [userReply, setUserReply] = useState({rate: "",reply:""});
+    const [randomUser, setRandomUser] = useState([{img: "",name: ""}])
 
     const [feedDisplay, setFeedDisplay] = useState({display: "none"})
-
     const [inputNum, setInputNum] = useState(55)
-
-    const [randomUser, setRandomUser] = useState([{img: "",
-        name: ""}
-        ])
-
     const [buttonControl, setButtonControl] = useState(false)
+    const [submitControl, setSubmitControl] = useState (false)
 
-    const userData = [{img: Ross,
-        name: "Ross Geller"},
-        {img: Rob,
-        name: "Robin Sherby"},
-        {img: Barn,
-        name: "Barney Stindon"},
-        {img: Reg,
-        name: "Regina Filange"}]
+    let navigate = useNavigate();
 
     
     function handleChange(e){
@@ -65,7 +45,15 @@ function EnterFeedBack(){
                 return false
             }
         })
-    }, [inputValue])
+
+        setSubmitControl(() => {
+            if(userReply.reply === ""){
+                return true
+            }else{
+                return false
+            }
+        })
+    }, [inputValue, userReply])
 
 
     // Random user function
@@ -113,7 +101,7 @@ function EnterFeedBack(){
             reply: ""
         })
 
-        setButtonControl(true);
+        setButtonControl(false);
         setFeedDisplay({display: "none"});
         setInputNum(55 - inputValue.reply.length)
     }
@@ -131,12 +119,34 @@ function EnterFeedBack(){
         
     }
 
+    // submit function
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const newFeedback = {
+            img: randomUser.img,
+            rate: parseInt(userReply.rate),
+            name: randomUser.name,
+            reply: userReply.reply
+            
+        }
+
+        handleAdd(newFeedback)
+        navigate("/thank-you")
+        
+    }
+
     return(
-        <div onLoad={randomImage} className="w-full flex justify-center items-center h-screen">
-            <div className="w-96 flex-col space-y-5">
+        <motion.div
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                transition={{ duration: 0.5 }}
+            >
+        <div onLoad={randomImage} className="w-full flex justify-center items-center h-screen ">
+            <form onSubmit={handleSubmit} className="w-96 flex flex-col space-y-5 justify-center items-center content-center">
                 <div>
-                    <EmployeeFeedback
-                        photo= {randomUser.img}
+                    <FeedBackPreview
+                        img= {randomUser.img}
                         name= {randomUser.name}
                         rate={userReply.rate}
                         reply={userReply.reply}
@@ -147,7 +157,7 @@ function EnterFeedBack(){
                 </div>
                 
                 <div className="w-96 pb-5">
-                    <p className="text-[15px]">How has your experience been working at PLEASE company?*</p>
+                    <p className="text-[15px] sm:px-10 sm:text-center">How has your experience been working at PLEASE company?*</p>
                 </div>
 
                 <div className="flex flex-row space-x-3">
@@ -197,10 +207,15 @@ function EnterFeedBack(){
                     status={buttonControl} />
 
                 <div>
-                    <MainButton />
+                    {/* <Link to="/thank-you"> */}
+                        <MainButton
+                        buttonType="submit"
+                        status={submitControl} />
+                    {/* </Link> */}
                 </div>
-            </div>
+            </form>
         </div>
+        </motion.div>
     )
 }
 
