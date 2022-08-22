@@ -38,9 +38,9 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/add-feedback" element={<EnterFeedBack handleAdd={addFeedback} />} />
-        <Route path="/done" element={<ThankYou />} />
-        <Route path="/admin-dashboard" element={<Dashboard feedback={feedback} />} />
+        <Route path="/get-started" element={<EnterFeedBack handleAdd={addFeedback} />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/dashboard" element={<Dashboard feedback={feedback} />} />
       </Routes>
     </div>
   );
