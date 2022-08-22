@@ -42,12 +42,12 @@ export default function Navbar() {
                 </div>
             </div>
             {/* Popup background */}
-            <div className="absolute 2sm:h-screen 2sm:w-96 mr-[2000px] top-0 left-0 right-0 bg-none hidden space-x-1 flex-col  2sm:block">
+            <div className={`absolute top-0 left-0 right-0 2sm:h-screen 2sm:w-96 mr-[2000px] md:hidden 2sm:hover:hidden bg-none space-x-1 flex-col  ${isOpen && "2sm:contents"}`}>
                     <div className="flex">
                         <div className={`absolute shadow-[0_85px_25px_rgba(118,125,232,0.1)] h-screen w-[7500px] bg-brightBlue popup ${isOpen && "Pop"}`}></div>
                         <div className={`shadow-[0_85px_25px_rgba(118,125,232,0.1)] absolute h-screen w-[750px] bg-mainBlue popup ${isOpen && "Pop2"}`}></div>
                     </div>
-                </div>
+            </div>
         </div>
     )
 }

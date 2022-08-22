@@ -18,7 +18,7 @@ function Home() {
                     Lorem ipsum dolor sit amet, consectetur     adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna     aliqua. Ut enim ad minim veniam, quis   nostrud exercitation ullamco 
                 </h1>
                 <Link to="/get-started">
-                <button className="flex flex-row items-center">
+                <button className="flex z-50 flex-row items-center">
                     <p className="text-[3rem] 2sm:text-[1.5rem] text-left text-mainBlack pt-5 px-28 2sm:px-1 font-semibold">Get Started</p>
                     <div className="ml-[-92px] 2sm:ml-[11px] mt-6">{redirect}</div>
                 </button>
