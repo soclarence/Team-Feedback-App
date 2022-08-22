@@ -23,7 +23,7 @@ export default function Navbar() {
                         <NavMenu />
                     </div>
 
-                    <div className={`md:hidden 2sm:hidden 2sm:block absolute 2sm:opacity-0 btn menu ${isOpen && " text"}`}>
+                    <div className={`md:hidden 2sm:hidden absolute 2sm:opacity-0 btn menu ${isOpen && " text"}`}>
                     <SecondaryButton
                     text="Get Started" />
                     </div>
@@ -42,7 +42,7 @@ export default function Navbar() {
                 </div>
             </div>
             {/* Popup background */}
-            <div className="absolute 2sm:h-screen 2sm:w-96 mr-[2000px] top-0 left-0 right-0 bg-none hidden flex space-x-1 flex-col  hidden 2sm:block">
+            <div className="absolute 2sm:h-screen 2sm:w-96 mr-[2000px] top-0 left-0 right-0 bg-none hidden space-x-1 flex-col  2sm:block">
                     <div className="flex">
                         <div className={`absolute shadow-[0_85px_25px_rgba(118,125,232,0.1)] h-screen w-[7500px] bg-brightBlue popup ${isOpen && "Pop"}`}></div>
                         <div className={`shadow-[0_85px_25px_rgba(118,125,232,0.1)] absolute h-screen w-[750px] bg-mainBlue popup ${isOpen && "Pop2"}`}></div>
