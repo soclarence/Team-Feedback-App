@@ -28,19 +28,19 @@
 .popup{
     opacity: 0%;
     top: -800px;
-    transition: all 0.5s ease-out;
+    transition: all 0.6s ease-out;
 }
 
 .popup.Pop{
     opacity: 100%;
     top: 0px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .popup.Pop2{
     opacity: 100%;
     top: 0px;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .menu{
@@ -66,8 +66,14 @@
     
 }
 
+.bgndd{
+    top: -800px;
+    transition: all 0.3s ease-in
+}
+
 .bgnd{
+    top: 0;
     display: block;
-    transition: all 0.5s ease-in;
+    transition: all 0.1s ease-in;
 }
 
