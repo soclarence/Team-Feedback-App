@@ -1,6 +1,7 @@
 import NavMenu from "./NavMenu"
 import Logo from "./Img/Logo"
 import HomeButton from "../Buttons/HomeButton"
+import SecondaryButton from "../Buttons/SecondaryButton"
 import "./Navbar.css"
 import { useState } from "react"
 
@@ -23,7 +24,7 @@ export default function Navbar() {
                     </div>
 
                     <div className={`md:hidden 2sm:hidden 2sm:block absolute 2sm:opacity-0 btn menu ${isOpen && " text"}`}>
-                    <HomeButton
+                    <SecondaryButton
                     text="Get Started" />
                     </div>
                     

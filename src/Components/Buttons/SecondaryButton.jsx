@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-function HomeButton(props) {
+function SecondaryButton(props) {
     return(
-        <button className="transition ease-in-out delay-150 hover:bg-[#5D63CA] bg-mainBlue w-44 h-12 rounded-xl">
+        <button className="2sm:bg-mainBlack transition ease-in-out delay-150 hover:bg-[#5D63CA] bg-mainBlue w-44 h-12 rounded-xl">
             <Link to="/get-started">
             <p className="text-white font-semibold text-[0.8rem]">{props.text}</p>
             </Link>
@@ -10,4 +10,4 @@ function HomeButton(props) {
     )
 }
 
-export default HomeButton;
+export default SecondaryButton;
