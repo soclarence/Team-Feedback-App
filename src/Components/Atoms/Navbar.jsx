@@ -10,7 +10,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     return(
         <div className="z-[900] fixed top-0 left-0 right-0 bg-white">
-            <div className="flex flex-row justify-center items-center 2sm:pb-1 pb-6 pt-6 px-28 2sm:space-x-28">
+            <div className="flex flex-row justify-center items-center 2sm:pb-1 pb-6 pt-6 px-28 2sm:space-x-28 md:space-x-14">
                 <div className="w-full">
                     <div className="w-9 h-9 flex items-center">
                         <Logo />
