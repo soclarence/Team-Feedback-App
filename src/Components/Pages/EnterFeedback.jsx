@@ -17,6 +17,7 @@ function EnterFeedBack({handleAdd}){
     const [inputNum, setInputNum] = useState(55)
     const [buttonControl, setButtonControl] = useState(false)
     const [submitControl, setSubmitControl] = useState (false)
+    const [doneButton, setDoneButton] = useState ("hidden")
 
     let navigate = useNavigate();
 
@@ -78,6 +79,7 @@ function EnterFeedBack({handleAdd}){
             }
         });
 
+        setDoneButton("")
         setButtonControl(true);
 
         setInputNum(55);
@@ -101,6 +103,7 @@ function EnterFeedBack({handleAdd}){
             reply: ""
         })
 
+        setDoneButton("hidden")
         setButtonControl(false);
         setFeedDisplay({display: "none"});
         setInputNum(55 - inputValue.reply.length)
@@ -114,6 +117,7 @@ function EnterFeedBack({handleAdd}){
             reply: userReply.reply + " "
         })
 
+        setDoneButton("hidden")
         setInputNum(55 - userReply.reply.length)
 
         
@@ -133,6 +137,7 @@ function EnterFeedBack({handleAdd}){
 
         handleAdd(newFeedback)
         navigate("/thank-you")
+        
         
     }
 
@@ -206,12 +211,12 @@ function EnterFeedBack({handleAdd}){
                     wordCount={inputNum}
                     status={buttonControl} />
 
-                <div>
-                    {/* <Link to="/thank-you"> */}
+                <div className={doneButton}>
                         <MainButton
                         buttonType="submit"
                         status={submitControl} />
-                    {/* </Link> */}
+                        <p className="text-[0.8rem] font-medium text-gray-400 mt-5 text-center px-5">If you're satisfied with your feedback, click the button above</p>
+                    
                 </div>
             </form>
         </div>

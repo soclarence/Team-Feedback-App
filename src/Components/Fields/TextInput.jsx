@@ -8,7 +8,7 @@ function TextInput(props) {
             </div>
 
             <div className="flex w-auto">
-                {/* <input className="w-96 text-[13px]" type="text" maxLength={55} /> */}
+                
                 <textarea style={{resize: "none", outline: "none"}} className="w-96 bg-none pt-2 px-2" name="reply" id="" cols="30" rows="2" maxLength={56}
                 onChange={props.changeValue}
                 value={props.formValue}
