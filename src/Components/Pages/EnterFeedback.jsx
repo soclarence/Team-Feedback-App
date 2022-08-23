@@ -90,7 +90,7 @@ const [buttonBG, setButtonBG] = useState()
             }
         });
 
-        setDoneButton("")
+        setDoneButton("flex flex-col justify-center content-center items-center")
         setButtonControl(true);
 
         setInputNum(55);
