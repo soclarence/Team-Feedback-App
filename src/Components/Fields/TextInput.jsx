@@ -15,7 +15,8 @@ function TextInput(props) {
                 ></textarea>
                 <ArrowSubmit 
                 disabled={props.status}
-                submit={props.send} />
+                submit={props.send}
+                style={props.style} />
             </div>
             <p className="text-[10px] text-gray-600 font-bold  pl-2">{props.wordCount}</p>
         </div>

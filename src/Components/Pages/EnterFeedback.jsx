@@ -18,6 +18,7 @@ function EnterFeedBack({handleAdd}){
     const [buttonControl, setButtonControl] = useState(false)
     const [submitControl, setSubmitControl] = useState (false)
     const [doneButton, setDoneButton] = useState ("hidden")
+const [buttonBG, setButtonBG] = useState()
 
     let navigate = useNavigate();
 
@@ -36,6 +37,7 @@ function EnterFeedBack({handleAdd}){
         })
 
     }
+    
 
     // radio/button disabled status function (effect)
     useEffect(() => {
@@ -54,7 +56,16 @@ function EnterFeedBack({handleAdd}){
                 return false
             }
         })
-    }, [inputValue, userReply])
+
+        setButtonBG(()=>{
+            if(buttonControl === false || submitControl === false){
+                return {backgroundColor: "#1E1E1E"}
+            }else{
+                return {backgroundColor: "#D9D9D9"}
+            }
+        })
+    }, [inputValue, userReply, buttonControl, submitControl])
+
 
 
     // Random user function
@@ -209,7 +220,8 @@ function EnterFeedBack({handleAdd}){
                     changeValue={handleChange}
                     send={sendUserReply}
                     wordCount={inputNum}
-                    status={buttonControl} />
+                    status={buttonControl}
+                    style={buttonBG} />
 
                 <div className={doneButton}>
                         <MainButton
